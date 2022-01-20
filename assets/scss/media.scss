@@ -1,0 +1,20 @@
+@media screen and (max-width: 560px) {
+    .header {
+        &-nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .hero {
+        &__wrapper {
+            padding: 0;
+            text-align: center;
+        }
+
+        &__title {
+            font-size: calc(var(--font-size) * 2);
+        }
+    }
+}

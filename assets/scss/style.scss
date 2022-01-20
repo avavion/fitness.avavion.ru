@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 :root {
-  --color-red: #e94f37;
-  --color-grey: #dfdfdf;
-  --color-black: #0f0e0e;
+  --color-red: rgb(233, 79, 55);
+  --color-grey: rgb(223, 223, 223);
+  --color-black: rgb(15, 14, 14);
 
   --font-family: "Montserrat", sans-serif;
   --font-size: 16px;
 
   --container-width: 1170px;
   --container-offset: 15px;
+
+  --animation-duration: 0.3s;
+  --animation-effect: ease-in-out;
 }
 
 *,
@@ -24,12 +27,14 @@ body {
   font-size: var(--font-size);
   color: var(--color-black);
   font-family: var(--font-family);
+  background-color: var(--color-grey);
 }
 
 .container {
   max-width: var(--container-width);
   padding: 0 var(--container-offset);
   margin: 0 auto;
+  height: 100%;
 }
 
 video {
@@ -47,20 +52,63 @@ a {
   color: var(--color-red);
 }
 
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size);
+  border: none;
+  text-decoration: none;
+  border: 2px solid var(--color-red);
+}
+
+ul {
+  list-style: none;
+}
+
+.section {
+  padding: 60px 0;
+}
+
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 10;
+
+  background-color: rgba(255, 255, 255, 0);
+
+  transition: background-color var(--animation-duration) var(--animation-effect);
+
   &.is--sticky {
-    background-color: #fff;
+    background-color: var(--color-grey);
+    & .logo svg * {
+      fill: var(--color-red);
+    }
+
+    & .menu__link {
+      color: var(--color-black);
+    }
   }
 
   &-nav {
     padding: 20px 0;
     display: grid;
+    grid-template-columns: minmax(100px, 20%) 1fr 1fr minmax(100px, 20%);
     grid-template-areas: "logo menu menu icons";
     align-items: center;
-  }
-
-  ul {
-    list-style: none;
   }
 
   .logo {
@@ -69,6 +117,9 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    & svg * {
+      transition: fill var(--animation-duration) var(--animation-effect);
+    }
   }
 
   .menu {
@@ -81,14 +132,18 @@ a {
     justify-content: center;
 
     gap: 0 30px;
+
+    &__link {
+      color: #fff;
+      transition: color var(--animation-duration) var(--animation-effect);
+    }
   }
 
-  .icons {
+  .actions {
+    display: flex;
+    align-items: center;
     grid-area: icons;
     justify-content: flex-end;
-    a {
-      font-size: calc(var(--font-size) * 1.5);
-    }
   }
 }
 
@@ -96,63 +151,52 @@ a {
   position: relative;
 
   &__wrapper {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding: 80px;
+  }
+
+  &__video {
+    min-height: 100vh;
+    max-height: 100vh;
+    margin-bottom: -4px;
+  }
+
+  &-video {
+    &:after {
+      content: "";
       position: absolute;
 
+      top: 0;
       left: 0;
       right: 0;
-      top: 0;
       bottom: 0;
 
-      padding: 100px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 
   &-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   &__title {
     font-size: calc(var(--font-size) * 3);
     color: #fff;
   }
+
+  &__text {
+    color: #fff;
+  }
 }
 
-// .hero {
-//   position: relative;
-
-//   &__video {
-//     position: absolute;
-
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-
-//     object-fit: cover;
-//   }
-
-//   &-video {
-//     &:after {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       right: 0;
-//       bottom: 0;
-//       background-color: rgba(0, 0, 0, 0.3);
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
-
-//   &__wrapper {
-//     min-height: 100vh;
-//   }
-
-//   &-content {
-//     position: relative;
-//     min-height: 100vh;
-//     padding: 60px;
-//     z-index: 2;
-//   }
-// }
+@import 'media';
