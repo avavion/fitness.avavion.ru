@@ -11,6 +11,9 @@
     ></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+
+    <script src="assets/libs/swiper-bundle.min.js" defer></script>
     <script src="assets/js/index.js" defer></script>
 
     <title>Главная страница</title>
@@ -87,7 +90,68 @@
         <div class="section-content">
           <ul class="cards collection-items">
             <!-- Start -->
-            <li class="card collection-item"></li>
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_3.jpg"
+                  alt="Стандартный"
+                  class="card__image"
+                />
+              </div>
+
+              <h3 class="card__title">Стандарт</h3>
+              <p class="card__text">
+                Свободное посещение в один залов в вашем городе
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_2.jpg"
+                  alt="Продвинутый"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Продвинутый</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе и 8 груповых
+                тренировок с тренером
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_1.jpg"
+                  alt="Экспертный"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Эксперт</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе, 10 персональных
+                тренировок и рацион питания
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
             <!-- End -->
           </ul>
         </div>
@@ -99,6 +163,28 @@
         <header class="section-header">
           <h2 class="section-header__title">Отзывы</h2>
         </header>
+        <div class="section-content">
+          <!-- Slider main container -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
       </div>
     </section>
 

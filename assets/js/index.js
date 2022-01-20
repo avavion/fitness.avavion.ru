@@ -4,13 +4,13 @@
 const DEBUG = true;
 
 // Debug hepler function
-const dd = (data) => DEBUG ?? console.log(data);
+const dd = (data) => DEBUG && console.log(data);
 
 // Scroll
 const scrollOn = () => document.body.style.overflow = '';
 const scrollOff = () => document.body.style.overflow = 'hidden';
 
-const getHeight = (el) => el.offsetHeight;
+const getOffsetHeight = (el) => el.offsetHeight;
 
 const header = {
     sticky: () => {
@@ -18,7 +18,7 @@ const header = {
 
         if (!$) return false;
 
-        const height = getHeight($) / 2;
+        const height = getOffsetHeight($) / 2;
 
         if (window.scrollY >= height) {
             $.classList.add('is--sticky');
@@ -37,6 +37,19 @@ const header = {
         header.sticky();
     }
 }
+
+const reviews = {
+    config: {
+
+    },
+    slider: (selector) => {
+        const elements = document.querySelectorAll(selector);
+
+        for (const element of elements) {
+            const slider = new Swiper(element, reviews.config);
+        }
+    }
+};
 
 // Init function
 const init = () => {
