@@ -15,7 +15,12 @@ const getOffsetHeight = (el) => el.offsetHeight;
 const video = () => {
     const videos = document.querySelectorAll('video');
 
-    for (const video of videos) video.play();
+    for (const video of videos) {
+        dd(video);
+
+        video.load();
+        video.play();
+    };
 }
 
 const header = {
