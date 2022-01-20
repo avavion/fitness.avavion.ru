@@ -9,8 +9,8 @@
       src="https://kit.fontawesome.com/5c55b6f969.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
 
     <script src="assets/libs/swiper-bundle.min.js" defer></script>
@@ -164,25 +164,71 @@
           <h2 class="section-header__title">Отзывы</h2>
         </header>
         <div class="section-content">
-          <!-- Slider main container -->
-          <div class="swiper">
-            <!-- Additional required wrapper -->
+          <div class="swiper reviews-list js-slider">
             <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              ...
+              <!-- Start -->
+              <!-- group -->
+              <div class="swiper-slide review">
+                <div class="box-image">
+                  <img src="assets/img/review.jpg" alt="Алан Богов - отзыв" />
+                </div>
+
+                <h3 class="review__title">Алан Богов</h3>
+                <p class="text review__text">
+                  Прекрасное место для хороших тренировок. Абонемент
+                  "Экспертный" точно стоит своих денег.
+                </p>
+              </div>
+
+              <div class="swiper-slide review">
+                <div class="box-image">
+                  <img
+                    src="assets/img/placeholder_3.jpg"
+                    alt="Исхаков Марс - отзыв"
+                  />
+                </div>
+
+                <h3 class="review__title">Исхаков Марс</h3>
+                <p class="text review__text">
+                  Приобрёл абонемент "Стандарт". Для человека с многолетним
+                  опытом - его хвататет.
+                </p>
+              </div>
+
+              <div class="swiper-slide review">
+                <div class="box-image">
+                  <img
+                    src="assets/img/placeholder_2.jpg"
+                    alt="Виолетта Чернышёва - отзыв"
+                  />
+                </div>
+
+                <h3 class="review__title">Виолетта Чернышёва</h3>
+                <p class="text review__text">
+                  Занимаюсь по абонементу "Продвинутый", выбрала направление
+                  "йога". Очень довольна груповыми тренировками.
+                </p>
+              </div>
+
+              <div class="swiper-slide review">
+                <div class="box-image">
+                  <img
+                    src="assets/img/placeholder_1.jpg"
+                    alt="Василий Рогов - отзыв"
+                  />
+                </div>
+
+                <h3 class="review__title">Василий Рогов</h3>
+                <p class="text review__text">
+                  Я как человек без опыта, но с диким желанием заняться своим
+                  телом выбрал абонемент "Экспертный". Тренировки с тренером -
+                  огонь!
+                </p>
+              </div>
+              <!-- /group -->
+              <!-- End -->
             </div>
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
           </div>
         </div>
       </div>

@@ -110,6 +110,13 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .w100 {
   width: 100%;
 }
@@ -333,6 +340,66 @@ ul {
 .hero__text {
   color: #fff;
   font-size: calc(var(--font-size) * 1.1);
+}
+
+.reviews {
+  --offset: 100px;
+  --image: 700px;
+}
+.reviews-list {
+  padding: 50px 0;
+}
+.reviews .review__title {
+  font-size: calc(var(--font-size) * 2);
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.reviews .review__title:after {
+  -webkit-transition: width calc(var(--animation-duration) * 3) var(--animation-effect);
+  transition: width calc(var(--animation-duration) * 3) var(--animation-effect);
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-red);
+  bottom: 0;
+  left: 0;
+}
+.reviews .review__text {
+  line-height: 1.75;
+}
+.reviews .box-image {
+  overflow: hidden;
+  min-height: var(--image);
+  max-height: var(--image);
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+.reviews .box-image img {
+  width: 100%;
+  height: 100%;
+  min-height: var(--image);
+  max-height: var(--image);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-filter calc(var(--animation-duration) * 3) var(--animation-effect);
+  transition: -webkit-filter calc(var(--animation-duration) * 3) var(--animation-effect);
+  transition: filter calc(var(--animation-duration) * 3) var(--animation-effect);
+  transition: filter calc(var(--animation-duration) * 3) var(--animation-effect), -webkit-filter calc(var(--animation-duration) * 3) var(--animation-effect);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+.reviews .box-image:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+.reviews ._active img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+.reviews ._active .review__title:after {
+  width: 25%;
 }
 
 @media screen and (max-width: 560px) {
