@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+:root {
+  --color-red: #e94f37;
+  --color-grey: #dfdfdf;
+  --color-black: #0f0e0e;
+
+  --font-family: "Montserrat", sans-serif;
+  --font-size: 16px;
+
+  --container-width: 1170px;
+  --container-offset: 15px;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--font-size);
+  color: var(--color-black);
+  font-family: var(--font-family);
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 var(--container-offset);
+  margin: 0 auto;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.red {
+  color: var(--color-red);
+}
+
+.header {
+  &.is--sticky {
+    background-color: #fff;
+  }
+
+  &-nav {
+    padding: 20px 0;
+    display: grid;
+    grid-template-areas: "logo menu menu icons";
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .logo {
+    grid-area: logo;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu {
+    grid-area: menu;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0 30px;
+  }
+
+  .icons {
+    grid-area: icons;
+    justify-content: flex-end;
+    a {
+      font-size: calc(var(--font-size) * 1.5);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+
+  &__wrapper {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      padding: 100px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: calc(var(--font-size) * 3);
+    color: #fff;
+  }
+}
+
+// .hero {
+//   position: relative;
+
+//   &__video {
+//     position: absolute;
+
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+
+//     object-fit: cover;
+//   }
+
+//   &-video {
+//     &:after {
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       background-color: rgba(0, 0, 0, 0.3);
+//       height: 100%;
+//       width: 100%;
+//     }
+//   }
+
+//   &__wrapper {
+//     min-height: 100vh;
+//   }
+
+//   &-content {
+//     position: relative;
+//     min-height: 100vh;
+//     padding: 60px;
+//     z-index: 2;
+//   }
+// }
