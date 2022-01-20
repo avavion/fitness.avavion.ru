@@ -45,14 +45,16 @@ const reviews = {
     },
     config(options = {}) {
         const settings = {
-            slidesPerView: 3,
+            slidesPerView: 1,
             slidesPerGroup: 1,
+            centeredSlides: true,
+            slideActiveClass: "_active",
             loop: true,
             speed: 500,
             autoplay: {
                 delay: 5000
             },
-            spaceBetween: 120,
+            spaceBetween: 30,
             direction: 'horizontal',
             effect: 'coverflow',
             coverflowEffect: {
@@ -61,6 +63,27 @@ const reviews = {
                 slideShadows: false,
                 stretch: 0
             },
+            breakpoints: {
+                576: {
+                    spaceBetween: 20,
+                    slidesPerView: 2,
+                },
+                768: {
+                    spaceBetween: 60,
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 2
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 120
+                },
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 120
+                },
+            }
         };
 
         return Object.assign(settings, options);
@@ -74,15 +97,15 @@ const reviews = {
         for (const element of elements) {
             const slider = this.slider(element, options);
 
-            slider.slides[slider.activeIndex + 1].classList.add('_active');
+            // slider.slides[slider.activeIndex + 1].classList.add('_active');
 
-            slider.on('slideChange', (swiper) => {
-                for (const slide of swiper.slides) {
-                    slide.classList.remove('_active');
-                }
+            // slider.on('slideChange', (swiper) => {
+            //     for (const slide of swiper.slides) {
+            //         slide.classList.remove('_active');
+            //     }
 
-                swiper.slides[swiper.activeIndex + 1].classList.add('_active');
-            });
+            //     swiper.slides[swiper.activeIndex + 1].classList.add('_active');
+            // });
 
         }
     }
