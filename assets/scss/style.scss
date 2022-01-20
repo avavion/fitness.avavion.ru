@@ -88,6 +88,7 @@ h6 {
   transition-timing-function: var(--animation-effect);
 
   &--outline {
+    color: var(--color-black);
     background-color: transparent;
     border: 2px solid var(--color-red);
     &:hover {
@@ -113,6 +114,27 @@ img {
 
 .w100 {
   width: 100%;
+}
+
+.burger {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+
+  &__line {
+    transition: background-color var(--animation-duration)
+      var(--animation-effect);
+
+    width: 30px;
+    height: 2px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+  }
 }
 
 .section {
@@ -211,10 +233,28 @@ img {
 
   transition: background-color var(--animation-duration) var(--animation-effect);
 
+  .logo {
+    span {
+      color: #fff;
+      text-transform: capitalize;
+      margin-left: 10px;
+      transition: color var(--animation-duration) var(--animation-effect);
+    }
+  }
+
   &.is--sticky {
-    background-color: var(--color-grey);
-    & .logo svg * {
-      fill: var(--color-red);
+    background-color: #fff;
+    & .logo {
+      span {
+        color: var(--color-black);
+      }
+      svg * {
+        fill: var(--color-red);
+      }
+    }
+
+    .burger__line {
+      background-color: var(--color-black);
     }
 
     & .menu__link {

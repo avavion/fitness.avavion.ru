@@ -1,7 +1,7 @@
 // by avavion.
 // 19/01/2022
 
-const DEBUG = true;
+const DEBUG = false;
 
 // Debug hepler function
 const dd = (data) => DEBUG && console.log(data);
@@ -11,6 +11,12 @@ const scrollOn = () => document.body.style.overflow = '';
 const scrollOff = () => document.body.style.overflow = 'hidden';
 
 const getOffsetHeight = (el) => el.offsetHeight;
+
+const video = () => {
+    const videos = document.querySelectorAll('video');
+
+    for (const video of videos) video.play();
+}
 
 const header = {
     sticky: () => {
@@ -67,6 +73,7 @@ const reviews = {
                 576: {
                     spaceBetween: 20,
                     slidesPerView: 2,
+                    speed: 1000
                 },
                 768: {
                     spaceBetween: 60,
@@ -96,17 +103,6 @@ const reviews = {
 
         for (const element of elements) {
             const slider = this.slider(element, options);
-
-            // slider.slides[slider.activeIndex + 1].classList.add('_active');
-
-            // slider.on('slideChange', (swiper) => {
-            //     for (const slide of swiper.slides) {
-            //         slide.classList.remove('_active');
-            //     }
-
-            //     swiper.slides[swiper.activeIndex + 1].classList.add('_active');
-            // });
-
         }
     }
 };
@@ -116,6 +112,7 @@ const init = () => {
     dd('init();');
     header.init();
     reviews.init();
+    video();
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -95,6 +95,7 @@ h6 {
           transition-timing-function: var(--animation-effect);
 }
 .button--outline {
+  color: var(--color-black);
   background-color: transparent;
   border: 2px solid var(--color-red);
 }
@@ -119,6 +120,27 @@ img {
 
 .w100 {
   width: 100%;
+}
+
+.burger {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.burger__line {
+  -webkit-transition: background-color var(--animation-duration) var(--animation-effect);
+  transition: background-color var(--animation-duration) var(--animation-effect);
+  width: 30px;
+  height: 2px;
+  border: none;
+  outline: none;
+  background-color: #fff;
 }
 
 .section {
@@ -212,11 +234,24 @@ img {
   -webkit-transition: background-color var(--animation-duration) var(--animation-effect);
   transition: background-color var(--animation-duration) var(--animation-effect);
 }
+.header .logo span {
+  color: #fff;
+  text-transform: capitalize;
+  margin-left: 10px;
+  -webkit-transition: color var(--animation-duration) var(--animation-effect);
+  transition: color var(--animation-duration) var(--animation-effect);
+}
 .header.is--sticky {
-  background-color: var(--color-grey);
+  background-color: #fff;
+}
+.header.is--sticky .logo span {
+  color: var(--color-black);
 }
 .header.is--sticky .logo svg * {
   fill: var(--color-red);
+}
+.header.is--sticky .burger__line {
+  background-color: var(--color-black);
 }
 .header.is--sticky .menu__link {
   color: var(--color-black);
@@ -411,8 +446,14 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header-nav .menu {
+    display: none;
   }
 
   .hero__wrapper {
@@ -426,5 +467,11 @@ img {
   .collection .cards {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }

@@ -3,7 +3,12 @@
     &-nav {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      
+      .menu {
+        display: none;
+      }
     }
   }
 
@@ -22,5 +27,9 @@
     .cards {
       grid-template-columns: 1fr;
     }
+  }
+
+  .burger {
+    display: flex;
   }
 }
