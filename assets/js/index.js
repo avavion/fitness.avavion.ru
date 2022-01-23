@@ -16,10 +16,8 @@ const video = () => {
     const videos = document.querySelectorAll('video');
 
     for (const video of videos) {
-        dd(video);
-
-        video.load();
-        video.play();
+        video.setAttribute('loop', 'loop');
+        video.setAttribute('autoplay', 'autoplay');
     };
 }
 
