@@ -368,6 +368,7 @@ img {
   top: 0;
   bottom: 0;
   padding: 80px;
+  text-align: center;
 }
 .hero__video {
   min-height: 100vh;
@@ -551,6 +552,18 @@ img {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .collection .cards {
+    --offset: 30px;
+    --image: 500px;
+  }
+  .collection .card__title {
+    font-size: calc(var(--font-size) * 1.5);
+  }
+  .collection .card__text {
+    font-size: calc(var(--font-size) * 0.85);
+  }
+}
 @media screen and (max-width: 576px) {
   .header-nav {
     display: -webkit-box;
