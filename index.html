@@ -13,6 +13,12 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
     <script src="assets/libs/swiper-bundle.min.js" defer></script>
     <script src="assets/js/index.js" defer></script>
 
@@ -165,6 +171,98 @@
       </div>
     </section>
 
+    <section class="complex section" id="complex">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-header__title">Спортивный зал</h2>
+        </header>
+      </div>
+
+      <div class="section-content">
+        <div class="swiper gallery" id="gallery">
+          <div class="swiper-wrapper">
+            <!-- Start -->
+
+            <div class="swiper-slide">
+              <div class="box-image">
+                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
+              </div>
+
+              <div class="slide-content">
+                <h3 class="slide__title">Кардиотренажеры</h3>
+                <p class="slide__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus quam animi nisi?
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="box-image">
+                <img src="assets/img/gym (2).jpg" alt="Наш зал" />
+              </div>
+
+              <div class="slide-content">
+                <h3 class="slide__title">Кардиотренажеры</h3>
+                <p class="slide__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus quam animi nisi?
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="box-image">
+                <img src="assets/img/gym (3).jpg" alt="Наш зал" />
+              </div>
+
+              <div class="slide-content">
+                <h3 class="slide__title">Кардиотренажеры</h3>
+                <p class="slide__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus quam animi nisi?
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="box-image">
+                <img src="assets/img/gym (4).jpg" alt="Наш зал" />
+              </div>
+
+              <div class="slide-content">
+                <h3 class="slide__title">Кардиотренажеры</h3>
+                <p class="slide__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus quam animi nisi?
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="box-image">
+                <img src="assets/img/gym (5).jpg" alt="Наш зал" />
+              </div>
+
+              <div class="slide-content">
+                <h3 class="slide__title">Кардиотренажеры</h3>
+                <p class="slide__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus quam animi nisi?
+                </p>
+              </div>
+            </div>
+            <!-- End -->
+          </div>
+
+          <div class="container">
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="reviews section" id="reviews">
       <div class="container">
         <header class="section-header">
@@ -240,88 +338,50 @@
       </div>
     </section>
 
-    <section class="complex section" id="complex">
+    <section class="location section" id="location">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-header__title">Спортивный зал</h2>
-        </header>
-      </div>
+        <div class="location-content">
+          <div class="location-map" id="map"></div>
+          <div class="location-contacts">
+            <h2 class="location__title">Адреса:</h2>
+            <ul class="list location-list dot">
+              <li class="list__item location-list__item">
+                <strong
+                  >Казань, <span class="red">Сибгата Хакима, 17</span></strong
+                >
+              </li>
+              <li class="list__item location-list__item">
+                <strong
+                  >Казань, <span class="red">Бари Галеева, 3а</span></strong
+                >
+              </li>
+              <li class="list__item location-list__item">
+                <strong>Казань, <span class="red">Четаева, 33</span></strong>
+              </li>
+              <li class="list__item location-list__item">
+                <strong>Казань, <span class="red">Чистопольская, 28</span></strong>
+              </li>
 
-      <div class="section-content">
-        <div class="swiper gallery" id="gallery">
-          <div class="swiper-wrapper">
-            <!-- Start -->
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
+              <li class="list__item location-list__item">
+                <strong>Казань, <span class="red">Мира, 13</span></strong>
+              </li>
+            </ul>
 
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (2).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (1).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (2).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (3).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (4).jpg" alt="Наш зал" />
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="box-image">
-                <img src="assets/img/gym (5).jpg" alt="Наш зал" />
-              </div>
-            </div>
-            <!-- End -->
-          </div>
-
-          <div class="container">
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <h2 class="location__title">Контакты</h2>
+            <ul class="list location-list">
+              <li class="location-list__item list__item">
+                <a href="tel:+79053171025" class="list__link"
+                  >+7 (905) 317 10 25</a
+                >
+                <strong>(Контактный центр)</strong>
+              </li>
+              <li class="location-list__item list__item">
+                <a href="tel:+79053171025" class="list__link"
+                  >+7 (905) 317 57 22</a
+                >
+                <strong>(Технический отдел)</strong>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

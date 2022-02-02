@@ -134,6 +134,17 @@ const gallery = () => {
     const slider = new Swiper(gallery, settings);
 }
 
+const map = (container) => {
+    mapboxgl.accessToken =
+        "pk.eyJ1IjoiYXZhdmlvbiIsImEiOiJja3o1aWF5MTYwMmIyMnZyenZoYTluODU1In0.MRjW7tk287m269CaZP2NuQ";
+    var map = new mapboxgl.Map({
+        container: container,
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [49.122335, 55.816852], // starting position [lng, lat]
+        zoom: 13 // starting zoom
+    });
+}
+
 // Init function
 const init = () => {
     dd('init();');
@@ -141,6 +152,8 @@ const init = () => {
     reviews.init();
     video();
     gallery();
+    map('map');
+
 }
 
 document.addEventListener('DOMContentLoaded', init);
