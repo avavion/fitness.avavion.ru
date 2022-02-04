@@ -13,6 +13,14 @@
       }
     }
   }
+  .location-content {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(300px, 1fr);
+  }
+
+  .reviews {
+    --offset: 40px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -48,5 +56,19 @@
 
   .burger {
     display: flex;
+  }
+
+  .footer__inner {
+    gap: 40px;
+    flex-direction: column;
+  }
+
+  .footer .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer .menu__link {
+    font-size: calc(var(--font-size) * 1.05);
   }
 }

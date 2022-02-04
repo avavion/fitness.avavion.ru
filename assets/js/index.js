@@ -2,6 +2,7 @@
 // 19/01/2022
 
 const DEBUG = false;
+const MOBILE_SCREEN = 576;
 
 // Debug hepler function
 const dd = (data) => DEBUG && console.log(data);
@@ -10,14 +11,33 @@ const dd = (data) => DEBUG && console.log(data);
 const scrollOn = () => document.body.style.overflow = '';
 const scrollOff = () => document.body.style.overflow = 'hidden';
 
+// isIphone?
+
+const isNotApple = () => {
+    if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        return false;
+    }
+
+    return true;
+}
+
+const isPhone = () => {
+    if (document.body.clientWidth >= MOBILE_SCREEN) {
+        return false;
+    }
+
+    return true;
+}
+
 const getOffsetHeight = (el) => el.offsetHeight;
 
 const video = () => {
     const videos = document.querySelectorAll('video');
 
     for (const video of videos) {
-        video.setAttribute('loop', 'loop');
+        video.setAttribute('muted', 'muted')
         video.setAttribute('autoplay', 'autoplay');
+        video.setAttribute('loop', 'loop');
     };
 }
 
@@ -141,8 +161,38 @@ const map = (container) => {
         container: container,
         style: "mapbox://styles/mapbox/streets-v11",
         center: [49.122335, 55.816852], // starting position [lng, lat]
-        zoom: 13 // starting zoom
+        zoom: 15 // starting zoom
     });
+}
+
+const drawers = () => {
+    const showButtons = document.querySelectorAll('[data-modal-show-button]');
+
+    for (const showButton of showButtons) {
+        const selectors = {
+            drawer: showButton.getAttribute('data-modal'),
+            closeButton: '[data-modal-close-button]'
+        }
+
+        const drawer = document.querySelector(selectors.drawer);
+        
+        if (!drawer) return false;
+
+        const closeButton = drawer.querySelector(selectors.closeButton);
+
+        const show = () => drawer.classList.add('active');
+        const hide = () => drawer.classList.remove('active');
+
+        showButton.addEventListener('click', () => {
+            scrollOff();
+            show();
+        })
+
+        closeButton.addEventListener('click', () => {
+            scrollOn();
+            hide();
+        });
+    }
 }
 
 // Init function
@@ -153,7 +203,8 @@ const init = () => {
     video();
     gallery();
     map('map');
-
+    drawers();
 }
+
 
 document.addEventListener('DOMContentLoaded', init);

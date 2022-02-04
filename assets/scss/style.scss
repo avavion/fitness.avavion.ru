@@ -146,6 +146,8 @@ img {
   flex-direction: column;
   gap: 8px;
 
+  cursor: pointer;
+
   &__line {
     transition: background-color var(--animation-duration)
       var(--animation-effect);
@@ -460,7 +462,6 @@ img {
 }
 
 .gallery {
-
   .slide-content {
     position: absolute;
     top: 0;
@@ -531,15 +532,15 @@ img {
 .location-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-auto-rows: minmax(300px, 1fr);
+  grid-auto-rows: minmax(500px, 1fr);
   gap: 60px;
 
-.location__title {
-  margin-bottom: 20px;
-  &:not(:first-child) {
-    margin-top: 20px;
+  .location__title {
+    margin-bottom: 20px;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
   }
-}
 
   .list {
     display: flex;
@@ -547,6 +548,7 @@ img {
     gap: 15px;
     &.dot {
       list-style: disc;
+      list-style-position: inside;
     }
   }
 }
@@ -566,6 +568,88 @@ img {
     gap: 0 30px;
     &__link {
       color: #fff;
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+
+  &__close {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+
+    cursor: pointer;
+    border: none;
+
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      height: 2px;
+      width: 20px;
+      background-color: var(--color-red);
+    }
+    &::after {
+      transform: translateX(-50%) rotate(calc(90deg + 45deg));
+    }
+    &::before {
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &.navigation {
+    background-color: rgba(0, 0, 0, 0);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    transition-property: visibility, opacity, transform, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+
+    &.active {
+      transition: background-color 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+        0.1s;
+
+      visibility: visible;
+      opacity: 1;
+      z-index: 11;
+      background-color: rgba(0, 0, 0, 0.2);
+
+      transform: translateX(0);
+    }
+
+    .menu {
+      padding: 70px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+
+      width: 50vw;
+
+      gap: 30px;
+
+      background-color: #fff;
     }
   }
 }
