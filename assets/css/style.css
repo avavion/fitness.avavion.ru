@@ -742,6 +742,13 @@ img {
     display: none;
   }
 
+  .section {
+    --offset: 30px;
+  }
+  .section-header__title {
+    font-size: calc(var(--font-size) * 1.5);
+  }
+
   .hero__wrapper {
     padding: 0;
     text-align: center;
@@ -782,5 +789,16 @@ img {
 
   .footer .menu__link {
     font-size: calc(var(--font-size) * 1.05);
+  }
+
+  .gallery .slide-content {
+    padding: 10px;
+  }
+  .gallery .slide-content .slide__title {
+    font-size: var(--font-size);
+  }
+  .gallery .slide-content .slide__text {
+    font-size: calc(var(--font-size) * 0.8);
+    text-align: center;
   }
 }
