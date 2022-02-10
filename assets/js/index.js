@@ -42,28 +42,30 @@ const video = () => {
 }
 
 const header = {
+    el: document.querySelector('header.header#header'),
+    selectors: {
+        sticky: 'is--sticky'
+    },
     sticky: () => {
-        const $ = document.querySelector('header.header#header');
-
-        if (!$) return false;
+        if (!header.el) return false;
 
         const height = getOffsetHeight($) / 2;
 
         if (window.scrollY >= height) {
-            $.classList.add('is--sticky');
+            header.el.classList.add(header.selectors.sticky);
         }
 
         window.addEventListener('scroll', () => {
             if (window.scrollY >= height) {
-                $.classList.add('is--sticky');
+                header.el.classList.add(header.selectors.sticky);
             } else {
-                $.classList.remove('is--sticky');
+                header.el.classList.remove(header.selectors.sticky);
             }
         });
     },
 
     init: () => {
-        header.sticky();
+        location.href.match('index') ? header.sticky() : header.el.classList.add(header.selectors.sticky);
     }
 }
 
@@ -155,6 +157,9 @@ const gallery = () => {
 }
 
 const map = (container) => {
+
+    if (!document.getElementById(container)) return false;
+
     mapboxgl.accessToken =
         "pk.eyJ1IjoiYXZhdmlvbiIsImEiOiJja3o1aWF5MTYwMmIyMnZyenZoYTluODU1In0.MRjW7tk287m269CaZP2NuQ";
     var map = new mapboxgl.Map({
@@ -175,7 +180,7 @@ const drawers = () => {
         }
 
         const drawer = document.querySelector(selectors.drawer);
-        
+
         if (!drawer) return false;
 
         const closeButton = drawer.querySelector(selectors.closeButton);

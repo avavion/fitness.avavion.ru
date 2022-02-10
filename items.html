@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/5c55b6f969.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script src="assets/libs/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
+
+    <title>Главная страница</title>
+  </head>
+  <body>
+    <header class="header is--sticky" id="header">
+      <div class="container">
+        <nav class="nav header-nav">
+          <div class="logo">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3 0C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V33C0 33.7956 0.316071 34.5587 0.87868 35.1213C1.44129 35.6839 2.20435 36 3 36H33C33.7956 36 34.5587 35.6839 35.1213 35.1213C35.6839 34.5587 36 33.7956 36 33V3C36 2.20435 35.6839 1.44129 35.1213 0.87868C34.5587 0.316071 33.7956 0 33 0H3ZM26 10H23V26H26V10ZM28 13H31V17H32V19H31V23H28V13ZM10 26H13V10H10V26ZM8 23H5V19H4V17H5V13H8V23ZM15 19H21V17H15V19Z"
+                fill="white"
+              />
+            </svg>
+            <span>fitness</span>
+          </div>
+
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#collection" class="menu__link">Абонементы</a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#reviews" class="menu__link">Отзывы</a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#complex" class="menu__link">Спортивный зал</a>
+            </li>
+          </ul>
+
+          <ul class="menu actions">
+            <li class="menu__item">
+              <a href="#" class="menu__link medium">Записаться</a>
+            </li>
+          </ul>
+
+          <button
+            class="burger"
+            data-modal-show-button
+            data-modal=".js-navigation"
+          >
+            <i class="burger__line"></i>
+            <i class="burger__line"></i>
+            <i class="burger__line"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="collection section" id="collection">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-header__title">Абонементы</h2>
+        </header>
+
+        <div class="section-content">
+          <ul class="cards collection-items">
+            <!-- Start -->
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_3.jpg"
+                  alt="Стандартный"
+                  class="card__image"
+                />
+              </div>
+
+              <h3 class="card__title">Стандарт</h3>
+              <p class="card__text">
+                Свободное посещение в один залов в вашем городе
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_2.jpg"
+                  alt="Продвинутый"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Продвинутый</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе и 8 груповых
+                тренировок с тренером
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_1.jpg"
+                  alt="Экспертный"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Эксперт</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе, 10 персональных
+                тренировок и рацион питания
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_3.jpg"
+                  alt="Стандартный"
+                  class="card__image"
+                />
+              </div>
+
+              <h3 class="card__title">Стандарт Плюс</h3>
+              <p class="card__text">
+                Свободное посещение любого спортивного зала
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_2.jpg"
+                  alt="Продвинутый"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Продвинутый Плюс</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе, 8 груповых
+                тренировок с тренером, 4 тренировки с персональным тренером
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_1.jpg"
+                  alt="Экспертный"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Эксперт Плюс</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе, 10 персональных
+                тренировок и рацион питания, 8 груповых тренировок
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_6.jpg"
+                  alt="Стандартный"
+                  class="card__image"
+                />
+              </div>
+
+              <h3 class="card__title">Спартанец</h3>
+              <p class="card__text">
+                Свободное посещение в вашем городе, тренировки с тренером,
+                групповые тренировки, индивидуальный подбор питания
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_5.jpg"
+                  alt="Продвинутый"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Семейный</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе и 8 груповых
+                тренировок с тренером
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+
+            <li class="card collection-item">
+              <div class="box-image">
+                <img
+                  src="assets/img/placeholder_4.jpg"
+                  alt="Экспертный"
+                  class="card__image"
+                />
+              </div>
+              <h3 class="card__title">Семейный Плюс</h3>
+              <p class="card__text">
+                Свободное посещение любого зала в вашем городе, 10 персональных
+                тренировок и рацион питания
+              </p>
+
+              <button
+                class="button button--outline button--large card__button w100 js-popup"
+              >
+                Забронировать
+              </button>
+            </li>
+            <!-- End -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="logo">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3 0C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V33C0 33.7956 0.316071 34.5587 0.87868 35.1213C1.44129 35.6839 2.20435 36 3 36H33C33.7956 36 34.5587 35.6839 35.1213 35.1213C35.6839 34.5587 36 33.7956 36 33V3C36 2.20435 35.6839 1.44129 35.1213 0.87868C34.5587 0.316071 33.7956 0 33 0H3ZM26 10H23V26H26V10ZM28 13H31V17H32V19H31V23H28V13ZM10 26H13V10H10V26ZM8 23H5V19H4V17H5V13H8V23ZM15 19H21V17H15V19Z"
+                fill="white"
+              />
+            </svg>
+            <span>fitness</span>
+          </div>
+
+          <ul class="menu">
+            <li class="menu__item">
+              <a href="#collection" class="menu__link">Абонементы</a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#reviews" class="menu__link">Отзывы</a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#complex" class="menu__link">Спортивный зал</a>
+            </li>
+
+            <li class="menu__item">
+              <a href="#complex" class="menu__link">Авторизация</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="navigation drawer js-navigation" aria-label="Меню">
+      <button
+        type="button"
+        data-modal-close-button
+        class="drawer__close"
+      ></button>
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Абонементы </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Спортивный зал </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="#" class="menu__link"> Отзывы </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

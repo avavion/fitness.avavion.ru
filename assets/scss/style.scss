@@ -108,6 +108,11 @@ h6 {
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-effect);
 
+  &::after,
+  &::before {
+    content: unset;
+  }
+
   &--outline {
     color: var(--color-black);
     background-color: transparent;
@@ -123,6 +128,10 @@ h6 {
   }
 }
 
+.dnone {
+  display: none !important;
+}
+
 ul {
   list-style: none;
 }
@@ -135,6 +144,48 @@ img {
 
 .w100 {
   width: 100%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+@for $i from 1 through 10 {
+  .mt-#{$i * 10} {
+    margin-top: #{$i * 10}px;
+  }
+
+  .mb-#{$i * 10} {
+    margin-bottom: #{$i * 10}px;
+  }
+
+  .ml-#{$i * 10} {
+    margin-left: #{$i * 10}px;
+  }
+
+  .mr-#{$i * 10} {
+    margin-right: #{$i * 10}px;
+  }
+}
+
+.wauto {
+  width: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .burger {
@@ -166,6 +217,13 @@ img {
 
   & + .section {
     padding-top: 0;
+  }
+
+  &.login {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &-header {
@@ -651,6 +709,69 @@ img {
 
       background-color: #fff;
     }
+  }
+}
+
+.form {
+  margin: 0 auto;
+  // max-width: calc(var(--container-width) / 3);
+  // min-width: calc(var(--container-width) / 3);
+  flex-basis: calc(var(--container-width) / 3);
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  background-color: #fff;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: calc(var(--font-size) * 1.5);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  &__input {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    outline: none;
+    position: relative;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-bottom: 1px solid var(--color-grey);
+    background-color: transparent;
+    transition: var(--animation-duration);
+    &:hover {
+      border-color: var(--color-black);
+    }
+    &:focus {
+      border-color: var(--color-red);
+    }
+
+    &:focus ~ .form__label,
+    &:not(:placeholder-shown):not(:focus) ~ .form__label {
+      top: -10px;
+      font-size: calc(var(--font-size) / 1.5);
+    }
+  }
+
+  &__label {
+    font-size: var(--font-size);
+    position: absolute;
+    top: 10px;
+    left: 0;
+    cursor: text;
+    transition: calc(var(--animation-duration) / 2);
   }
 }
 

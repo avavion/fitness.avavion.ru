@@ -24,7 +24,7 @@
 
     <title>Главная страница</title>
   </head>
-  <body>
+  <body class="template-index">
     <header class="header" id="header">
       <div class="container">
         <nav class="nav header-nav">
@@ -66,7 +66,11 @@
             </li>
           </ul>
 
-          <button class="burger" data-modal-show-button data-modal=".js-navigation">
+          <button
+            class="burger"
+            data-modal-show-button
+            data-modal=".js-navigation"
+          >
             <i class="burger__line"></i>
             <i class="burger__line"></i>
             <i class="burger__line"></i>
@@ -167,6 +171,10 @@
             </li>
             <!-- End -->
           </ul>
+
+          <footer class="dnone section-footer flex justify-center mt-100">
+            <a class="wauto button button--outline button--large" href="/items.html">Показать больше</a>
+          </footer>
         </div>
       </div>
     </section>
@@ -432,7 +440,11 @@
     </footer>
 
     <div class="navigation drawer js-navigation" aria-label="Меню">
-      <button type="button" data-modal-close-button class="drawer__close"></button>
+      <button
+        type="button"
+        data-modal-close-button
+        class="drawer__close"
+      ></button>
       <ul class="menu">
         <li class="menu__item">
           <a href="#" class="menu__link"> Абонементы </a>
