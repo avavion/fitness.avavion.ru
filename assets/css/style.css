@@ -368,7 +368,7 @@ img {
 .section + .section {
   padding-top: 0;
 }
-.section.login {
+.section.login, .section.register {
   min-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;

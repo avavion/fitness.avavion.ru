@@ -219,7 +219,7 @@ img {
     padding-top: 0;
   }
 
-  &.login {
+  &.login, &.register {
     min-height: 90vh;
     display: flex;
     align-items: center;

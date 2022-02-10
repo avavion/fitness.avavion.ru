@@ -49,7 +49,7 @@ const header = {
     sticky: () => {
         if (!header.el) return false;
 
-        const height = getOffsetHeight($) / 2;
+        const height = getOffsetHeight(header.el) / 2;
 
         if (window.scrollY >= height) {
             header.el.classList.add(header.selectors.sticky);

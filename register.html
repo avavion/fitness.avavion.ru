@@ -66,7 +66,11 @@
             </li>
           </ul>
 
-          <button class="burger" data-modal-show-button data-modal=".js-navigation">
+          <button
+            class="burger"
+            data-modal-show-button
+            data-modal=".js-navigation"
+          >
             <i class="burger__line"></i>
             <i class="burger__line"></i>
             <i class="burger__line"></i>
@@ -75,81 +79,78 @@
       </div>
     </header>
 
-    <section class="collection section" id="collection">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-header__title">Абонементы</h2>
+    <section class="section register" id="register">
+      <form class="form flex" id="form-register" method="POST">
+        <header class="form__header mb-30">
+          <h2 class="form__title">Регистрация</h2>
         </header>
 
-        <div class="section-content">
-          <ul class="cards collection-items">
-            <!-- Start -->
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_3.jpg"
-                  alt="Стандартный"
-                  class="card__image"
-                />
-              </div>
-
-              <h3 class="card__title">Стандарт</h3>
-              <p class="card__text">
-                Свободное посещение в один залов в вашем городе
-              </p>
-
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
-              >
-                Забронировать
-              </button>
-            </li>
-
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_2.jpg"
-                  alt="Продвинутый"
-                  class="card__image"
-                />
-              </div>
-              <h3 class="card__title">Продвинутый</h3>
-              <p class="card__text">
-                Свободное посещение любого зала в вашем городе и 8 груповых
-                тренировок с тренером
-              </p>
-
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
-              >
-                Забронировать
-              </button>
-            </li>
-
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_1.jpg"
-                  alt="Экспертный"
-                  class="card__image"
-                />
-              </div>
-              <h3 class="card__title">Эксперт</h3>
-              <p class="card__text">
-                Свободное посещение любого зала в вашем городе, 10 персональных
-                тренировок и рацион питания
-              </p>
-
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
-              >
-                Забронировать
-              </button>
-            </li>
-            <!-- End -->
-          </ul>
+        <div class="form__group">
+          <input
+            required
+            type="text"
+            id="formInputSecondName"
+            class="form__input form__input--text"
+            placeholder=" "
+          />
+          <label for="formInputSecondName" class="form__label">Фамилия</label>
         </div>
-      </div>
+
+        <div class="form__group">
+          <input
+            required
+            type="text"
+            id="formInputFirstName"
+            class="form__input form__input--text"
+            placeholder=" "
+          />
+          <label for="formInputFirstName" class="form__label">Имя</label>
+        </div>
+
+        <div class="form__group">
+          <input
+            required
+            type="tel"
+            id="formInputPhone"
+            class="form__input form__input--phone"
+            placeholder=" "
+          />
+          <label for="formInputPhone" class="form__label">Номер телефона</label>
+        </div>
+
+        <div class="form__group">
+          <input
+            required
+            type="email"
+            id="formInputEmail"
+            class="form__input form__input--email"
+            placeholder=" "
+          />
+          <label for="formInputEmail" class="form__label"
+            >Электронная почта</label
+          >
+        </div>
+
+        <div class="form__group">
+          <input
+            required
+            type="password"
+            id="formInputPassword"
+            class="form__input form__input--password"
+            placeholder=" "
+          />
+          <label for="formInputPassword" class="form__label">Пароль</label>
+        </div>
+
+        <footer class="form__footer">
+          <button
+            class="button button--outline button--large form__button w100"
+            type="submit"
+          >
+            Регистрация
+          </button>
+        </footer>
+      </form>
     </section>
 
     <footer class="footer" id="footer">
@@ -195,7 +196,11 @@
     </footer>
 
     <div class="navigation drawer js-navigation" aria-label="Меню">
-      <button type="button" data-modal-close-button class="drawer__close"></button>
+      <button
+        type="button"
+        data-modal-close-button
+        class="drawer__close"
+      ></button>
       <ul class="menu">
         <li class="menu__item">
           <a href="#" class="menu__link"> Абонементы </a>
