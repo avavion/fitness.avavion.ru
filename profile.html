@@ -66,7 +66,11 @@
             </li>
           </ul>
 
-          <button class="burger" data-modal-show-button data-modal=".js-navigation">
+          <button
+            class="burger"
+            data-modal-show-button
+            data-modal=".js-navigation"
+          >
             <i class="burger__line"></i>
             <i class="burger__line"></i>
             <i class="burger__line"></i>
@@ -75,79 +79,98 @@
       </div>
     </header>
 
-    <section class="collection section" id="collection">
+    <section class="profile section" id="profile">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-header__title">Абонементы</h2>
-        </header>
+        <div class="profile-grid">
+          <div class="profile-photo">
+            <div class="box photo br-4"></div>
+          </div>
+          <div class="profile-body br-4">
+            <ul class="cards">
+              <li class="card br-4">
+                <h3 class="card__title">Стандартный</h3>
+                <p class="card__text">
+                  До конца абонемента осталось:
+                  <span class="red bold">3 месяца 13 дня</span>
+                </p>
+                <button class="button button--large button--outline">
+                  Отменить
+                </button>
+              </li>
 
-        <div class="section-content">
-          <ul class="cards collection-items">
-            <!-- Start -->
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_3.jpg"
-                  alt="Стандартный"
-                  class="card__image"
-                />
-              </div>
+              <li class="card br-4">
+                <h3 class="card__title">Семейный</h3>
+                <p class="card__text">
+                  До конца абонемента осталось:
+                  <span class="red bold">12 месяцев 29 дней</span>
+                </p>
+                <button class="button button--large button--outline">
+                  Отменить
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="profile-aside">
+            <h3 class="profile__title">Мой профиль</h3>
 
-              <h3 class="card__title">Стандарт</h3>
-              <p class="card__text">
-                Свободное посещение в один залов в вашем городе
-              </p>
-
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
+            <div class="form__group">
+              <input
+                required
+                type="text"
+                id="formInputSecondName"
+                class="form__input form__input--text"
+                placeholder=" "
+                value="Богов"
+                disabled
+              />
+              <label for="formInputSecondName" class="form__label"
+                >Фамилия</label
               >
-                Забронировать
-              </button>
-            </li>
+            </div>
 
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_2.jpg"
-                  alt="Продвинутый"
-                  class="card__image"
-                />
-              </div>
-              <h3 class="card__title">Продвинутый</h3>
-              <p class="card__text">
-                Свободное посещение любого зала в вашем городе и 8 груповых
-                тренировок с тренером
-              </p>
+            <div class="form__group">
+              <input
+                required
+                type="text"
+                id="formInputFirstName"
+                class="form__input form__input--text"
+                placeholder=" "
+                value="Алан"
+                disabled
+              />
+              <label for="formInputFirstName" class="form__label">Имя</label>
+            </div>
 
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
+            <div class="form__group">
+              <input
+                required
+                type="tel"
+                id="formInputPhone"
+                class="form__input form__input--phone"
+                placeholder=" "
+                value="+79053171025"
+                disabled
+              />
+              <label for="formInputPhone" class="form__label"
+                >Номер телефона</label
               >
-                Забронировать
-              </button>
-            </li>
+            </div>
 
-            <li class="card collection-item">
-              <div class="box-image">
-                <img
-                  src="assets/img/placeholder_1.jpg"
-                  alt="Экспертный"
-                  class="card__image"
-                />
-              </div>
-              <h3 class="card__title">Эксперт</h3>
-              <p class="card__text">
-                Свободное посещение любого зала в вашем городе, 10 персональных
-                тренировок и рацион питания
-              </p>
-
-              <button
-                class="button button--outline button--large card__button w100 js-popup"
+            <div class="form__group">
+              <input
+                required
+                type="email"
+                id="formInputEmail"
+                class="form__input form__input--email"
+                placeholder=" "
+                value="avavionmvm@gmail.com"
+                disabled
+              />
+              <label for="formInputEmail" class="form__label"
+                >Электронная почта</label
               >
-                Забронировать
-              </button>
-            </li>
-            <!-- End -->
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -195,7 +218,11 @@
     </footer>
 
     <div class="navigation drawer js-navigation" aria-label="Меню">
-      <button type="button" data-modal-close-button class="drawer__close"></button>
+      <button
+        type="button"
+        data-modal-close-button
+        class="drawer__close"
+      ></button>
       <ul class="menu">
         <li class="menu__item">
           <a href="#" class="menu__link"> Абонементы </a>

@@ -7,12 +7,14 @@ const MOBILE_SCREEN = 576;
 // Debug hepler function
 const dd = (data) => DEBUG && console.log(data);
 
+// URL PATH
+const PATH = location.pathname === "/" ? 'index' : location.pathname;
+
 // Scroll
 const scrollOn = () => document.body.style.overflow = '';
 const scrollOff = () => document.body.style.overflow = 'hidden';
 
-// isIphone?
-
+// isIphone
 const isNotApple = () => {
     if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
         return false;
@@ -21,6 +23,8 @@ const isNotApple = () => {
     return true;
 }
 
+
+// Is mobile phone
 const isPhone = () => {
     if (document.body.clientWidth >= MOBILE_SCREEN) {
         return false;
@@ -65,7 +69,7 @@ const header = {
     },
 
     init: () => {
-        location.href.match('index') ? header.sticky() : header.el.classList.add(header.selectors.sticky);
+        PATH.match('index') ? header.sticky() : header.el.classList.add(header.selectors.sticky);
     }
 }
 
