@@ -24,6 +24,15 @@
 }
 
 @media screen and (max-width: 576px) {
+  .profile {
+    &-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas: "photo" "sidebar" "body";
+    }
+    .card {
+      padding: 0;
+    }
+  }
   .header {
     &-nav {
       display: flex;

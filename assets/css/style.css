@@ -1122,6 +1122,15 @@ img {
   }
 }
 @media screen and (max-width: 576px) {
+  .profile-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+        grid-template-areas: "photo" "sidebar" "body";
+  }
+  .profile .card {
+    padding: 0;
+  }
+
   .header-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1198,5 +1207,19 @@ img {
   .gallery .slide-content .slide__text {
     font-size: calc(var(--font-size) * 0.8);
     text-align: center;
+  }
+  .profile-photo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .profile-body {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .profile-aside {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
   }
 }
